@@ -1,0 +1,134 @@
+.code-block-wrapper {
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  margin: 0.5rem 0;
+}
+
+.code-block-header {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.language-badge {
+  color: var(--accent-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.copy-btn {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--accent-primary);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(0, 212, 255, 0.2);
+  border-color: var(--accent-primary);
+  transform: scale(1.05);
+}
+
+.copy-btn.copied {
+  background: rgba(46, 213, 115, 0.2);
+  border-color: var(--accent-success);
+  color: var(--accent-success);
+}
+
+.code-block {
+  padding: 1.5rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  color: #d4d4d4;
+}
+
+.code-block code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Basic Syntax Highlighting for JavaScript */
+.language-javascript,
+.language-jsx,
+.language-typescript,
+.language-ts {
+  /* Keywords */
+  --keyword: #569cd6;
+  /* Strings */
+  --string: #ce9178;
+  /* Numbers */
+  --number: #b5cea8;
+  /* Functions */
+  --function: #dcdcdc;
+  /* Comments */
+  --comment: #6a9955;
+}
+
+/* HTML Syntax */
+.language-html {
+  --keyword: #569cd6;
+  --string: #ce9178;
+  --tag: #4ec9b0;
+}
+
+/* CSS Syntax */
+.language-css {
+  --keyword: #569cd6;
+  --property: #9cdcfe;
+  --value: #ce9178;
+}
+
+/* SQL Syntax */
+.language-sql {
+  --keyword: #569cd6;
+  --string: #ce9178;
+  --function: #dcdcdc;
+}
+
+/* Scrollbar for code block */
+.code-block::-webkit-scrollbar {
+  height: 6px;
+}
+
+.code-block::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 3px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .code-block {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .code-block-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .copy-btn {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

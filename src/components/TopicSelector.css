@@ -1,0 +1,180 @@
+.topic-selector {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  min-height: calc(100vh - 200px);
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.intro-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.intro-section p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.topic-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.topic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.topic-card:hover::before {
+  left: 100%;
+}
+
+.topic-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 136, 0.02) 100%);
+}
+
+.topic-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.topic-card h3 {
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.topic-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
+
+.difficulty-distribution {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  margin: 0.5rem 0;
+}
+
+.diff-badge {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.diff-badge.basic {
+  background: rgba(46, 213, 115, 0.2);
+  color: var(--accent-success);
+}
+
+.diff-badge.intermediate {
+  background: rgba(255, 165, 2, 0.2);
+  color: var(--accent-warning);
+}
+
+.diff-badge.advanced {
+  background: rgba(255, 71, 87, 0.2);
+  color: var(--accent-danger);
+}
+.diff-badge.coding {
+  background: rgba(71, 132, 255, 0.2);
+  color: var(--accent-primary);
+}
+
+
+.start-btn {
+  background: linear-gradient(135deg, var(--accent-color), rgba(0, 255, 136, 0.8));
+  border: none;
+  color: var(--bg-primary);
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+@media (max-width: 768px) {
+  .topics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .intro-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .intro-section p {
+    font-size: 1rem;
+  }
+
+  .topic-card {
+    padding: 1.5rem;
+  }
+
+  .topic-icon {
+    font-size: 2.5rem;
+  }
+
+  .topic-card h3 {
+    font-size: 1.3rem;
+  }
+}
